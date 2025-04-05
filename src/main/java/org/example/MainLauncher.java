@@ -6,6 +6,7 @@ import java.net.UnknownHostException;
 
 public class MainLauncher {
     public static void main(String[] args) {
+        System.out.println("PROGRAM START");
         // listeningPort = 9999
         // address = 127.0.0.1
         // sendPort = 9911
@@ -15,10 +16,10 @@ public class MainLauncher {
         int operatingMode = 0;
         InetAddress address = null;
         try {
-            listeningPort = Integer.parseInt(args[0]);
-            sendPort = Integer.parseInt(args[2]);
-            operatingMode = Integer.parseInt(args[3]);
-            address = InetAddress.getByName(args[1]);
+            listeningPort = Integer.parseInt(System.getenv("LISTENING_PORT"));
+            sendPort = Integer.parseInt(System.getenv("SENDING_PORT"));
+            operatingMode = Integer.parseInt(System.getenv("OPERATING_MODE"));
+            address = InetAddress.getByName(System.getenv("SENDING_ADDRESS"));
             checkPort(listeningPort);
             checkPort(sendPort);
         } catch(NumberFormatException e) {

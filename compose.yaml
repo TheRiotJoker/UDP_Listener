@@ -1,0 +1,25 @@
+version: '3'
+services:
+  C1:
+    environment:
+      - LISTENING_PORT=8080
+      - SENDING_PORT=8080
+      - OPERATING_MODE=2 # addition
+      - SENDING_ADDRESS=C2
+    image: myapp_image
+    ports:
+      - "9000:8080/udp"
+  C2:
+    environment:
+      - LISTENING_PORT=8080
+      - SENDING_PORT=8080
+      - OPERATING_MODE=0 # bitshift to the left
+      - SENDING_ADDRESS=C3
+    image: myapp_image
+  C3:
+    environment:
+      - LISTENING_PORT=8080
+      - SENDING_PORT=9001
+      - OPERATING_MODE=3 # subtraction
+      - SENDING_ADDRESS=host.docker.internal
+    image: myapp_image
