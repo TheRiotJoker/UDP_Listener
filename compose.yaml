@@ -21,5 +21,5 @@ services:
       - LISTENING_PORT=8080
       - SENDING_PORT=9001
       - OPERATING_MODE=3 # subtraction
-      - SENDING_ADDRESS=host.docker.internal
+      - SENDING_ADDRESS=10.136.0.121
     image: myapp_image
