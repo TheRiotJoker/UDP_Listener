@@ -37,7 +37,7 @@ public class MainLauncher {
             System.out.println("Operating mode may only be 0, 1, 2 or 3");
             System.exit(1);
         }
-        UDPListener listener = new UDPListener(listeningPort, address, sendPort, operatingMode);
+        TCPListener listener = new TCPListener(listeningPort, address, sendPort, operatingMode);
         try {
             listener.startListening();
         } catch (IOException e) {
