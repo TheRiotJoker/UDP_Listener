@@ -21,5 +21,7 @@ services:
       - LISTENING_PORT=8080
       - SENDING_PORT=9001
       - OPERATING_MODE=3 # subtraction
-      - SENDING_ADDRESS=10.136.0.121
+      - SENDING_ADDRESS=10.250.4.3
     image: myapp_image
+# Listening done via: socat -v UDP-RECVFROM:9001,fork STDOUT
+# Sending done via: echo "12850212" | socat - UDP4-SENDTO:localhost:9000
