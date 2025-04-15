@@ -6,20 +6,20 @@ services:
       - SENDING_PORT=8080
       - OPERATING_MODE=2 # addition
       - SENDING_ADDRESS=C2
-    image: myapp_image
+    image: myapp_image_tcp
     ports:
-      - "9000:8080/udp"
+      - "9000:8080"
   C2:
     environment:
       - LISTENING_PORT=8080
       - SENDING_PORT=8080
       - OPERATING_MODE=0 # bitshift to the left
       - SENDING_ADDRESS=C3
-    image: myapp_image
+    image: myapp_image_tcp
   C3:
     environment:
       - LISTENING_PORT=8080
       - SENDING_PORT=9001
       - OPERATING_MODE=3 # subtraction
-      - SENDING_ADDRESS=10.136.0.121
-    image: myapp_image
+      - SENDING_ADDRESS=10.250.4.3
+    image: myapp_image_tcp

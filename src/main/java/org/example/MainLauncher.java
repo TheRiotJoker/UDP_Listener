@@ -6,7 +6,7 @@ import java.net.UnknownHostException;
 
 public class MainLauncher {
     public static void main(String[] args) {
-        System.out.println("PROGRAM START");
+        System.out.println("PROGRAM START: TCP");
         // listeningPort = 9999
         // address = 127.0.0.1
         // sendPort = 9911
@@ -42,6 +42,7 @@ public class MainLauncher {
             listener.startListening();
         } catch (IOException e) {
             System.out.println("Unexpected IOException occurred. Message: "+e.getMessage());
+            System.out.println("Cause: "+e.getCause());
         }
     }
     private static void checkPort(int port) {
