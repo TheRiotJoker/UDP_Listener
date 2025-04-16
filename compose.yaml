@@ -21,5 +21,8 @@ services:
       - LISTENING_PORT=8080
       - SENDING_PORT=9001
       - OPERATING_MODE=3 # subtraction
-      - SENDING_ADDRESS=10.250.4.3
+      - SENDING_ADDRESS=192.168.64.1
     image: myapp_image_tcp
+
+# To send: socat - TCP4:localhost:9000
+# To receive: socat -v TCP-LISTEN:9001,reuseaddr STDOUT
