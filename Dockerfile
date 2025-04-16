@@ -1,3 +1,4 @@
+# jdk version not strictly necessary, jre would suffice
 FROM eclipse-temurin:21-jdk-jammy
 LABEL authors="marko"
 WORKDIR /myapp

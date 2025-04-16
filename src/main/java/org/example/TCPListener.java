@@ -36,18 +36,10 @@ public class TCPListener {
                 byte[] resultBytes = new byte[bytesRead];
                 for(int i = 0; i < bytesRead; i++) {
                     resultBytes[i] = switch (operatingMode) {
-                        case 0 ->
-                            //bitshift left (multiplication by 2)
-                                (byte) (buffer[i] << 1);
-                        case 1 ->
-                            //bitshift right (division by 2)
-                                (byte) (buffer[i] >> 1);
-                        case 2 ->
-                            //addition
-                                (byte) (buffer[i] + ((byte)1));
-                        case 3 ->
-                            //subtraction
-                                (byte) (buffer[i] - ((byte)1));
+                        case 0 -> (byte) (buffer[i] << 1); //bitshift left (*2)
+                        case 1 -> (byte) (buffer[i] >> 1); //bitshift right (/2)
+                        case 2 -> (byte) (buffer[i] + ((byte)1)); // +1
+                        case 3 -> (byte) (buffer[i] - ((byte)1)); // -1
                         default -> throw new IllegalArgumentException("FATAL Error: This exception should never hit.");
                     };
                 }

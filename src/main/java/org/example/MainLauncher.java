@@ -29,7 +29,7 @@ public class MainLauncher {
             System.out.println(e.getMessage());
             System.exit(1);
         } catch (UnknownHostException e) {
-            System.out.println("The specified address: "+args[1]+" is invalid.");
+            System.out.println("The specified sending address is invalid.");
             System.exit(1);
         }
 
