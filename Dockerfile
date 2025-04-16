@@ -1,5 +1,5 @@
 FROM eclipse-temurin:21-jdk-jammy
-LABEL authors="marko"
+LABEL authors="marko&jo"
 WORKDIR /myapp
 
 COPY build/libs/*-SNAPSHOT.jar /myapp/myapp.jar

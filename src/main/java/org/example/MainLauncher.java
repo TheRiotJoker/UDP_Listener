@@ -31,6 +31,8 @@ public class MainLauncher {
         } catch (UnknownHostException e) {
             System.out.println("The specified address: "+args[1]+" is invalid.");
             System.exit(1);
+        } catch (NullPointerException e) {
+            System.out.println("Please make sure none of the required env vars are missing.");
         }
 
         if(operatingMode < 0 || operatingMode > 4) {
